@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.signup-container > h1{
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 2.7rem;
+    font-weight: 900;
+    font-family: 'Inter Tight', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+.signup-container > form{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.signup-container > form > input{
+    border: 1px solid rgba(0, 159, 184, 255);
+    font-size: 1.5rem;
+    padding: 15px;
+    margin: 1rem 0;
+}
+
+
+.signup-container > form > button.manual-sign-up{
+    color: white;
+    background-color: #132043;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.signup-container > form > button.manual-sign-up:hover {
+    opacity: 90%;
+}
+
+.signup-container > form > button.manual-sign-up:disabled{
+    opacity: 80%;
+}
+
+
+.signup-container > .account-exist{
+    margin-top: 2rem;
+    font-size: 1.45rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .signup-container > h1 {
+        margin: 0.5rem 0;
+        font-size: 1.5rem;
+        font-weight: 900;
+        font-family: 'Inter Tight', sans-serif;
+        letter-spacing: 0.5px;
+    }
+
+    .signup-container>form {
+        width: 50%;
+    }
+
+    .signup-container > form > input {
+        font-size: 1rem;
+        padding: 7px;
+        margin: 0.75rem 0;
+    }
+
+    .signup-container > form > button.manual-sign-up {
+        padding: 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .signup-container > .account-exist {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+
+
+
+}

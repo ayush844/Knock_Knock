@@ -53,9 +53,6 @@ export const signIn = async (req, res, next) => {
         .json(rest)
         .status(200);
         
-
-
-
         
     } catch (error) {
         next(error);

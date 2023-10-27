@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import './SignUp.css'
 import { Link, useNavigate } from 'react-router-dom'
+import Oauth from '../Components/Oauth';
 
 const SignUp = () => {
 
@@ -72,6 +73,7 @@ const SignUp = () => {
         <button disabled={loading} className='manual-sign-up'> 
           {loading? "LOADING..." : "SIGN UP"}
         </button>
+        <Oauth />
       </form>
 
       <div className='account-exist'>

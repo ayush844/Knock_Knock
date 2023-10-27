@@ -1,0 +1,26 @@
+
+button.manual-oauth{
+    color: white;
+    background-color: #F94C10;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.7rem;
+}
+
+button.manual-oauth:hover{
+    opacity: 70%;
+}
+
+
+
+@media (max-width: 1000px) {
+    button.manual-oauth{
+        padding: 0.75rem;
+        font-size: 0.7rem;
+    }
+}
+

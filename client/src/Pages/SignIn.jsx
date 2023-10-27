@@ -4,6 +4,7 @@ import './SignIn.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {siginStart, signinSuccess, signinFailure} from '../Redux/user/userSlice.js'
+import Oauth from '../Components/Oauth'
 
 const SignIn = () => {
 
@@ -75,6 +76,9 @@ const SignIn = () => {
         <button disabled={loading} className='manual-sign-up'> 
           {loading? "LOADING..." : "SIGN IN"}
         </button>
+
+        <Oauth />
+
       </form>
 
       <div className='account-exist'>

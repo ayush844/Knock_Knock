@@ -3,8 +3,12 @@ import React from 'react'
 import './Header.css'
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 const Header = () => {
+
+    const {currentUser} = useSelector(state => state.user);
+
   return (
     <header>
 
@@ -35,8 +39,12 @@ const Header = () => {
                     <li className='hide-when-small'>ABOUT</li>
                 </Link>
 
-                <Link to='/sign-in' style={{ textDecoration: 'none' }}>
-                    <li>SIGN IN</li>
+                <Link to='/profile' style={{ textDecoration: 'none' }}>
+                    {
+                        currentUser ?
+                        <img className='userImage' src={currentUser.avatar} alt='profile' /> : 
+                        <li>SIGN IN</li>
+                    }
                 </Link>
 
             </ul>

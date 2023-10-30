@@ -50,6 +50,14 @@ form.userForm > button.update_btn{
 
 }
 
+form.userForm>button.update_btn:hover{
+    opacity: 90%;
+}
+
+form.userForm>button.update_btn:disabled {
+    opacity: 70%;
+}
+
 
 
 div.options{

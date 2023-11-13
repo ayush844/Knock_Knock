@@ -30,7 +30,7 @@ form.userForm > img.userInfoImg{
 }
 
 form.userForm>img.userInfoImg:hover {
-    border: 5px solid red;
+    border: 5px solid rgba(0, 159, 184, 255);
 }
 
 form.userForm > input.userInfo{
@@ -73,6 +73,7 @@ div.options{
     justify-content: space-between;
     margin: 2rem;
     font-family: 'Exo 2', sans-serif;
+    cursor: pointer;
 }
 
 div.options > span.delete{

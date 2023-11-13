@@ -105,6 +105,8 @@ div.options>span.signOut {
 
     form.userForm>img.userInfoImg {
         height: 6rem;
+        border-radius: 50%;
+        width: 6rem;
         padding: 0.25rem;
     }
 

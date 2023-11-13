@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage';
 import { app } from '../firebase';
-import { updateUserFailure, updateUserStart, updateUserSuccess } from '../Redux/user/userSlice';
+import { deleteUserFailure, deleteUserStart, deleteUserSuccess, updateUserFailure, updateUserStart, updateUserSuccess } from '../Redux/user/userSlice';
 
 
 const Profile = () => {
@@ -86,6 +86,26 @@ const Profile = () => {
 
   }
 
+  const handleDeleteUser = async () => {
+    try {
+      dispatch(deleteUserStart());
+      const res = await fetch(`/api/user/delete/${currentUser._id}`,{
+        method: 'DELETE'
+      });
+      const data = await res.json();
+
+      if(data.success === false){
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+
+      dispatch(deleteUserSuccess(data));
+
+    } catch (error) {
+      dispatch(deleteUserFailure(error.message));
+    }
+  }
+
 
   return (
     <div>
@@ -109,7 +129,7 @@ const Profile = () => {
         <button disabled={loading} className='update_btn'>{loading ? "loading..." : "UPDATE"}</button>
 
         <div className='options'>
-          <span className='delete'>Delete Account</span>
+          <span onClick={handleDeleteUser} className='delete'>Delete Account</span>
           <span className='signOut'>Sign Out</span>
         </div>
 

@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage';
 import { app } from '../firebase';
-import { deleteUserFailure, deleteUserStart, deleteUserSuccess, updateUserFailure, updateUserStart, updateUserSuccess } from '../Redux/user/userSlice';
+import { deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutFailure, signOutStart, signOutSuccess, updateUserFailure, updateUserStart, updateUserSuccess } from '../Redux/user/userSlice';
 
 
 const Profile = () => {
@@ -106,6 +106,26 @@ const Profile = () => {
     }
   }
 
+  const handleSignOut = async () => {
+    try {
+      dispatch(signOutStart());
+      const res = await fetch(`/api/auth/signout`,{
+        method: 'GET'
+      });
+      const data = await res.json();
+
+      if(data.success === false){
+        dispatch(signOutFailure(data.message));
+        return;
+      }
+
+      dispatch(signOutSuccess(data));
+
+    } catch (error) {
+      dispatch(signOutFailure(error.message));
+    }
+  }
+
 
   return (
     <div>
@@ -130,7 +150,7 @@ const Profile = () => {
 
         <div className='options'>
           <span onClick={handleDeleteUser} className='delete'>Delete Account</span>
-          <span className='signOut'>Sign Out</span>
+          <span onClick={handleSignOut} className='signOut'>Sign Out</span>
         </div>
 
           <p style={{color: 'red', marginTop: '3px'}}>{error ? error : ''}</p>

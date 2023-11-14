@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
 
 h1{
@@ -57,8 +57,30 @@ form.userForm > button.update_btn{
 
 }
 
+form.userForm>a.createListingBtn {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0.6rem 2rem;
+    width: 17%;
+    font-size: 1.5rem;
+    background-color: #A6FF96;
+    color: black;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 3px solid black;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    letter-spacing: 2;
+}
+
+
 form.userForm>button.update_btn:hover{
     opacity: 90%;
+}
+
+form.userForm>a.createListingBtn:hover{
+    opacity: 80%;
 }
 
 form.userForm>button.update_btn:disabled {
@@ -115,6 +137,13 @@ div.options>span.signOut {
         width: 70%;
         font-size: 1rem;
     }    
+
+    form.userForm>a.createListingBtn {
+        margin-top: 1rem;
+        padding: 0.5rem 1.5rem;
+        width: 65%;
+        font-size: 0.75rem;
+    }
 
     div.options{
         width: 70%;

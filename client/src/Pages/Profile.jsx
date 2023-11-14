@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage';
 import { app } from '../firebase';
 import { deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutFailure, signOutStart, signOutSuccess, updateUserFailure, updateUserStart, updateUserSuccess } from '../Redux/user/userSlice';
+import {Link} from 'react-router-dom'; 
 
 
 const Profile = () => {
@@ -147,6 +148,11 @@ const Profile = () => {
         <input className='userInfo' type="password" placeholder='password' id='password' onChange={handleChange}/>
 
         <button disabled={loading} className='update_btn'>{loading ? "loading..." : "UPDATE"}</button>
+
+        <Link to={'/create-listing'} className='createListingBtn'>
+          CREATE A LISTING
+        </Link>   
+        
 
         <div className='options'>
           <span onClick={handleDeleteUser} className='delete'>Delete Account</span>

@@ -251,7 +251,7 @@ main>form>div.image-area>button:disabled {
     }
 
     main>form>div.input-area>div.details>div.details_item>input[type="number"] {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
         width: 60px;
         height: 40px;
         border: 1px solid #A9A9A9;

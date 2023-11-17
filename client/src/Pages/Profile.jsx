@@ -17,6 +17,8 @@ const Profile = () => {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [showListingError, setShowListingError] = useState(false);
+  const [userListings, setUserListings] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -127,9 +129,27 @@ const Profile = () => {
     }
   }
 
+  const handleShowListing = async() => {
+    try {
+      setShowListingError(false);
+      const res = await fetch(`/api/user/listing/${currentUser._id}`);
+      const data = await res.json();
+      if(data.success === false){
+        setShowListingError(true);
+        return;
+      }
+
+      setUserListings(data);
+
+
+    } catch (error) {
+      setShowListingError(true);
+    }
+  }
+
 
   return (
-    <div>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h1>PROFILE</h1>
 
       <form className='userForm' onSubmit={handleSubmit}>
@@ -164,6 +184,39 @@ const Profile = () => {
           <p style={{color: 'green', marginTop: '3px'}}>{updateSuccess ? "successfully updated profile" : ''}</p>
 
       </form>
+
+      <div className="listingsInProfile">
+          <button onClick={handleShowListing} id='showListing'>Show Listings</button>
+          <p style={{fontSize: '1rem', color: 'red'}}>{showListingError ? "Error show listings" : ""}</p>
+          {
+            userListings && userListings.length > 0 && 
+            <div className="" style={{display: 'flex', flexDirection: 'column', gap: '2'}}>
+              <h1 style={{textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold', margin: '0 5px'}}>YOUR LISTINGS</h1>
+              {
+              userListings.map((listing) => (
+              <div key={listing._id} className="listingBox" style={{margin: "0.6rem", padding:"4px 9px", backgroundColor: 'transparent', border: '1px solid #45474B', borderRadius: '5px', display: 'flex', flexDirection: "row", justifyContent: 'space-between', alignItems: 'center', width: '100%', maxWidth: '80vw', }}>
+
+                <Link to={`/listing/${listing._id}`}>
+                  <img style={{height: '9rem', width: '11rem', marginRight: '7px'}} src={listing.imageUrls[0]} alt="listing cover" />
+                </Link>
+
+                <Link to={`/listing/${listing._id}`} style={{color: 'black', textDecoration: 'none', fontSize: '1.3rem', textTransform: 'capitalize', fontWeight: 'bold', overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}>
+                  <p>{listing.name}</p>
+                </Link>
+
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', }}>
+                  <button style={{backgroundColor: 'transparent', border: 'none', color: 'red', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>DELETE</button>
+                  <button style={{backgroundColor: 'transparent', border: 'none', color: 'green', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>EDIT</button>
+                </div>
+
+              </div>
+              ))
+            }</div>
+
+
+          }
+      </div>
+      
 
 
     </div>

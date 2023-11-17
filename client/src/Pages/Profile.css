@@ -16,6 +16,7 @@ form.userForm{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 0;
 }
 
 form.userForm > img.userInfoImg{
@@ -94,6 +95,7 @@ div.options{
     display: flex;
     justify-content: space-between;
     margin: 2rem;
+    margin-bottom: 0;
     font-family: 'Exo 2', sans-serif;
     cursor: pointer;
 }
@@ -107,6 +109,29 @@ div.options>span.signOut {
     color: #0802A3;
     font-size: 1.25rem;
 }
+
+
+.listingsInProfile{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    margin-top: 0;
+}
+
+
+.listingsInProfile > button#showListing{
+    color: green;
+    font-size: 1.25rem;
+    cursor: pointer;
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 
 
 
@@ -156,6 +181,11 @@ div.options>span.signOut {
     
     div.options>span.signOut {
         color: #0802A3;
+        font-size: 0.9rem;
+    }
+
+
+    .listingsInProfile>button#showListing {
         font-size: 0.9rem;
     }
 

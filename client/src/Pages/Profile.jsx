@@ -139,11 +139,30 @@ const Profile = () => {
         return;
       }
 
-      setUserListings(data);
+
+      setUserListings([...data].reverse());
 
 
     } catch (error) {
       setShowListingError(true);
+    }
+  }
+
+  const handleDeleteListing = async (id) => {
+    try {
+      const res = await fetch(`/api/listing/delete/${id}`,{
+        method: 'DELETE'
+      });
+      const data = await res.json();
+      if(data.success == false){
+        console.log(data.message);
+        return;
+      }
+
+      setUserListings((prev) => prev.filter((listing) => listing._id !== id));
+
+    } catch (error) {
+      console.log(error.message);
     }
   }
 
@@ -205,7 +224,7 @@ const Profile = () => {
                 </Link>
 
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', }}>
-                  <button style={{backgroundColor: 'transparent', border: 'none', color: 'red', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>DELETE</button>
+                  <button onClick={() => handleDeleteListing(listing._id)} style={{backgroundColor: 'transparent', border: 'none', color: 'red', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>DELETE</button>
                   <button style={{backgroundColor: 'transparent', border: 'none', color: 'green', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>EDIT</button>
                 </div>
 

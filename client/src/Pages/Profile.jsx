@@ -167,6 +167,11 @@ const Profile = () => {
   }
 
 
+  const handleUpdateListing = async (id) => {
+    
+  }
+
+
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h1>PROFILE</h1>
@@ -225,7 +230,7 @@ const Profile = () => {
 
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', }}>
                   <button onClick={() => handleDeleteListing(listing._id)} style={{backgroundColor: 'transparent', border: 'none', color: 'red', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>DELETE</button>
-                  <button style={{backgroundColor: 'transparent', border: 'none', color: 'green', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>EDIT</button>
+                  <button onClick={() => handleUpdateListing(listing._id)} style={{backgroundColor: 'transparent', border: 'none', color: 'green', fontSize: '1rem', padding: '5px', cursor: 'pointer'}}>EDIT</button>
                 </div>
 
               </div>

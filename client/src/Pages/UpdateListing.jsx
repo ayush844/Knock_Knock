@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './CreateListing.css'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 
@@ -13,6 +13,8 @@ const CreateListing = () => {
   const {currentUser} = useSelector(state => state.user);
 
   const navigate = useNavigate();
+
+  const params = useParams();
 
   const [files, setFiles] = useState([]);
 
@@ -39,7 +41,29 @@ const CreateListing = () => {
 
   const [loading, setLoading] = useState(false);
 
-  console.log(formData);
+
+  useEffect(()=>{
+    const fetchListing = async ()=> {
+
+        const listingId = params.listingId;
+        
+        const res = await fetch(`/api/listing/get/${listingId}`,{
+            method: 'GET'
+        })
+
+        const data = await res.json();
+
+        if(data.success == false){
+            console.log(data.message);
+            return;
+        }
+
+        setFormData(data);
+
+    };
+
+    fetchListing();
+  }, []);
 
 
   const handleImageSubmit = (e) => {
@@ -158,7 +182,9 @@ const CreateListing = () => {
       setLoading(true);
       setError(false);
 
-      const res = await fetch('/api/listing/create', {
+      const listingId = params.listingId;
+
+      const res = await fetch(`/api/listing/update/${listingId}`, {
         method: 'POST',
         headers:{
           'Content-Type': 'application/json',
@@ -187,7 +213,7 @@ const CreateListing = () => {
 
   return (
     <main>
-      <h1>Create a <span>Listing</span></h1>
+      <h1>Edit your <span>Listing</span></h1>
       <form onSubmit={handleSubmit}>
         <div className="input-area">
           <input type="text" placeholder='Name' id='name' maxLength={62} minLength={10} required onChange={handleChange} value={formData.name}/>
@@ -233,7 +259,6 @@ const CreateListing = () => {
                 {
                   formData.type==='rent'? (<span>($ / month)</span>):(<span>($)</span>)
                 }
-                
               </div>
               
             </div>
@@ -270,7 +295,7 @@ const CreateListing = () => {
 
             ))
           }
-          <button disabled={loading || uploading} type='submit'>{loading ? "creating..." : "CREATE LISTING"}</button>
+          <button disabled={loading || uploading} type='submit'>{loading ? "updating..." : "UPDATE THE LISTING"}</button>
           {error && <p style={{color: 'red', fontSize: '1rem'}}>{error}</p>}
         </div>
       </form>

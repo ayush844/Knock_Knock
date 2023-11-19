@@ -6,6 +6,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import {Navigation} from 'swiper/modules';
 import 'swiper/css/bundle';
+import PlaceIcon from '@mui/icons-material/Place';
+import BathtubIcon from '@mui/icons-material/Bathtub';
+import HotelIcon from '@mui/icons-material/Hotel';
+import LocalParkingIcon from '@mui/icons-material/LocalParking';
+import DeckIcon from '@mui/icons-material/Deck';
 
 const Listing = () => {
 
@@ -61,6 +66,52 @@ const Listing = () => {
                 ))}
 
             </Swiper>
+
+            <h1 className='listing-heading'>{listing.name}</h1>
+
+            <p className='propertyPrice'>
+                
+                {listing.offer ? listing.discountPrice : listing.regularPrice}
+                {listing.type == 'sale' ? "$" : "$/month"}
+            </p>
+
+            <div className="listingDetails">
+                <p className="address"><PlaceIcon style={{fontSize: '2.5rem', paddingRight: '0.35rem', color: 'rgba(0, 159, 184, 255)'}}/>{listing.address}</p>
+
+                <div className="price">
+                    <p className='type'>{listing.type == 'sale' ? "FOR SALE" : "FOR RENT"}</p>
+                    {listing.offer && (
+                        <p className='discount'>{listing.regularPrice - listing.discountPrice}{listing.type == 'sale' ? "$" : "$/month"} discount</p>
+                    )}
+                </div>
+
+                <p className="description">
+                    <span>Description - </span>
+                    {listing.description}
+                </p>
+
+                <div className="moreDetails" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem', marginTop: '2rem'}}>
+                    <div className="itemDetail" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'}}>
+                        <BathtubIcon style={{fontSize:'2rem', color: '#F11A7B'}}/>
+                        {listing.baths} Baths
+                    </div>
+
+                    <div className="itemDetail" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'}}>
+                        <HotelIcon style={{fontSize:'2rem', color: '#F11A7B'}}/>
+                        {listing.bedrooms} Bedrooms
+                    </div>
+
+                    <div className="itemDetail" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'}}>
+                        <LocalParkingIcon style={{fontSize:'2rem', color: '#F11A7B'}}/>
+                        {listing.parking ? " " : "No "}Parking
+                    </div>
+
+                    <div className="itemDetail" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'}}>
+                        <DeckIcon style={{fontSize:'2rem', color: '#F11A7B'}}/>
+                        {listing.furnished ? " " : "Not "}Furnished
+                    </div>
+                </div>
+            </div>
         </>
     )}
       

@@ -1,13 +1,35 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Header.css'
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
 const Header = () => {
 
     const {currentUser} = useSelector(state => state.user);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('searchTerm', searchTerm);
+        const searchQuery = urlParams.toString();
+
+        navigate(`/search?${searchQuery}`);
+
+    }
+
+    useEffect(()=>{
+        const urlParams = new URLSearchParams(location.search);
+        const searchTermFromUrl = urlParams.get('searchTerm');
+        if(searchTermFromUrl){
+            setSearchTerm(searchTermFromUrl);
+        }
+    }, [location.search])
 
   return (
     <header>
@@ -24,9 +46,11 @@ const Header = () => {
             </Link>
 
 
-            <form>
-                <input type="text" placeholder='Search...' />
-                <SearchIcon className='icon'/>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder='Search...' value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
+                <button>
+                    <SearchIcon className='icon'/>
+                </button>
             </form>
 
             <ul>

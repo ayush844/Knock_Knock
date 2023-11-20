@@ -69,6 +69,12 @@ header>.header-content>form>input>svg{
     font-size: 2rem;
 }
 
+header>.header-content>form>button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 header>.header-content>form>.icon{
     
     font-size: 1.75rem;
@@ -114,7 +120,7 @@ header>.header-content>ul>a>li:hover{
 @media (max-width: 1000px) {
 
     header>.header-content>form {
-        padding: 0.3rem;
+        padding: 0.3rem ;
         max-width: 200px;
     }
 
@@ -133,7 +139,7 @@ header>.header-content>ul>a>li:hover{
         font-size: 0.5rem;
     }
 
-    header>.header-content>form>.icon {
+    header>.header-content>form>button>.icon {
         font-size: 0.95rem;
     }
 

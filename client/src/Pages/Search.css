@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap');
+
+.searchPage{
+    display: flex;
+    flex-direction: row;
+}
+
+.leftSearch{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid black;
+    padding: 2rem 0.7rem;
+    height: 100vh;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;    
+}
+
+.searchPage>.leftSearch>form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.searchPage>.leftSearch>form>.search-term {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.searchPage>.leftSearch>form>.search-term>input{
+    padding: 3px 5px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 159, 184, 255);
+
+}
+
+.searchPage>.leftSearch>form>.type{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.searchPage>.leftSearch>form>.type>.typeOptions{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.searchPage>.leftSearch>form>.type>.typeOptions>input[type="radio"] {
+    transform: scale(1.5);
+}
+
+.searchPage>.leftSearch>form>.type>.typeOptions>input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+
+.searchPage>.leftSearch>form>.sortDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchPage>.leftSearch>form>.sortDiv>select{
+    padding: 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    border: 3px solid rgba(0, 159, 184, 255)
+}
+
+.searchBtn{
+    font-family: 'Exo 2', sans-serif;
+    padding: 0.7rem;
+    font-size: 2rem;
+    border: 3px solid black;
+    background-color: #A6FF96;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+.searchBtn:hover{
+    background-color: #508D69;
+    color: aliceblue;
+}
+
+
+@media (max-width: 1000px) {
+    .searchPage {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .leftSearch {
+        border-bottom: 2px solid black;
+        padding: 2rem 0.7rem;
+        height: fit-content;
+        font-size: 1rem;
+    }
+
+    .searchBtn {
+        padding: 0.3rem;
+        font-size: 1rem;
+        border: 1.5px solid black;
+        border-radius: 5px;
+    }
+
+
+}

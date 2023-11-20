@@ -85,3 +85,17 @@ export const getUser = async (req, res, next)=>{
 
 
 }
+
+
+export const getListing = async (req, res, next)=>{
+
+    try {
+
+        
+
+    } catch (error) {
+        next(error);
+    }
+
+
+}

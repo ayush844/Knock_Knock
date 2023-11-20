@@ -11,6 +11,8 @@ import BathtubIcon from '@mui/icons-material/Bathtub';
 import HotelIcon from '@mui/icons-material/Hotel';
 import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import DeckIcon from '@mui/icons-material/Deck';
+import { useSelector } from 'react-redux';
+import Contact from '../Components/Contact';
 
 const Listing = () => {
 
@@ -20,6 +22,8 @@ const Listing = () => {
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [contact, setContact] = useState(false);
+    const {currentUser} = useSelector(state => state.user);
 
     useEffect(()=>{
         const fetchListing = async() => {
@@ -46,7 +50,6 @@ const Listing = () => {
         fetchListing();
     }, [params.listingId]);
 
-    console.log(loading);
     console.log(listing);
 
   return (
@@ -111,6 +114,16 @@ const Listing = () => {
                         {listing.furnished ? " " : "Not "}Furnished
                     </div>
                 </div>
+
+                <div className="contact">
+                    {currentUser && listing.userRef !== currentUser._id && !contact && (
+                        <button onClick={()=>setContact(true)} className="contactLandlord">CONTACT LANDLORD</button>
+                    )}
+
+                    {contact && <Contact listing={listing}/>}
+                    
+                </div>
+
             </div>
         </>
     )}

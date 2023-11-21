@@ -98,6 +98,11 @@
 }
 
 
+.searchPage>.rightSearch{
+    padding: 1rem;
+}
+
+
 @media (max-width: 1000px) {
     .searchPage {
         flex-direction: column;

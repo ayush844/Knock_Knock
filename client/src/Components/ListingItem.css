@@ -86,3 +86,28 @@
     overflow: hidden;
 }
 
+
+@media (max-width: 1000px) {
+    .card {
+        gap: 0.25rem;
+    }
+    
+    .card:hover {
+        transform: scale(1.01);
+    }
+    
+    .card>img {
+        width: 20rem;
+        height: 13rem;
+    }
+    
+    .card>img:hover {
+        transform: scale(1.01);
+    }
+    
+        .card>.details {
+            padding: 0.25rem;
+            width: fit-content;
+            width: 19rem;
+        }
+}

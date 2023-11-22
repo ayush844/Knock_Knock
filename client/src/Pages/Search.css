@@ -96,10 +96,8 @@
 }
 
 .searchBtn:hover{
-    background-color: #508D69;
-    color: aliceblue;
+    opacity: 80%;
 }
-
 
 .searchPage>.rightSearch{
     padding: 1rem;

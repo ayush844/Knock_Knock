@@ -25,11 +25,11 @@ const ListingItem = ({listing}) => {
                 <div className="bedsAndBaths" style={{display:'flex', flexDirection:'row', gap:'1rem'}}>
                   <div className="beds" style={{display:'flex', flexDirection:'row', gap:'2px',  alignItems:'center'}}>
                     <HotelIcon style={{color:'rgba(0, 159, 184, 255)'}}/>
-                    {listing.bedrooms > 1 ? <p style={{color:'black'}}>`${listing.bedrooms} beds`</p> : <p style={{color:'black'}}>`${listing.bedrooms} bed`</p>}
+                    {listing.bedrooms > 1 ? <p style={{color:'black'}}>`{listing.bedrooms} beds`</p> : <p style={{color:'black'}}>`{listing.bedrooms} bed`</p>}
                   </div>
                   <div className="baths" style={{display:'flex', flexDirection:'row', gap:'2px',  alignItems:'center'}}>
                     <BathtubIcon style={{color:'rgba(0, 159, 184, 255)'}}/>
-                    {listing.baths > 1 ? <p style={{color:'black'}}>`${listing.baths} baths`</p> : <p style={{color:'black'}}>`${listing.baths} bath`</p>}
+                    {listing.baths > 1 ? <p style={{color:'black'}}>`{listing.baths} baths`</p> : <p style={{color:'black'}}>`{listing.baths} bath`</p>}
                   </div>
                 </div>
             </div>          

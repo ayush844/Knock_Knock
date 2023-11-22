@@ -22,7 +22,7 @@ const Search = () => {
     const [loading, setLoading] = useState(false);
     const [listing, setListing] = useState([]);
 
-    console.log(listing);
+    const [showMore, setShowMore] = useState(false);
 
     useEffect(()=>{
         const urlParams = new URLSearchParams(location.search);
@@ -34,8 +34,6 @@ const Search = () => {
         const offerFromUrl = urlParams.get('offer');
         const sortFromUrl = urlParams.get('sort');
         const orderFromUrl = urlParams.get('order');
-
-        console.log(orderFromUrl);
 
         if(searchTermFromUrl || typeFromUrl || parkingFromUrl || furnishedFromUrl || offerFromUrl || sortFromUrl || orderFromUrl){
             setSideBarData({
@@ -51,9 +49,17 @@ const Search = () => {
 
         const fetchListing = async ()=>{
             setLoading(true);
+            setShowMore(false);
             const searchQuery = urlParams.toString();
             const res = await fetch(`/api/listing/get?${searchQuery}`);
             const data = await res.json();
+
+            if(data.length > 8){
+                setShowMore(true);
+            }else{
+                setShowMore(false);
+            }
+
             setListing(data);
             setLoading(false);
 
@@ -101,6 +107,22 @@ const Search = () => {
 
         navigate(`/search?${searchQuery}`);
     }
+
+    const onShowMoreClick = async()=>{
+        const numberOfListing = listing.length;
+        const startIndex = numberOfListing;
+        const urlParams = new URLSearchParams(location.search);
+        urlParams.set('startIndex', startIndex);
+        const searchQuery = urlParams.toString();
+        const res = await fetch(`/api/listing/get?${searchQuery}`);
+        const data = await res.json();
+        if(data.length < 9){
+            setShowMore(false);
+        }
+        setListing([...listing, ...data]);
+
+    }
+
 
   return (
     <div className='searchPage'>
@@ -174,6 +196,11 @@ const Search = () => {
             ))
             }
 
+            {showMore && (
+                <button onClick={onShowMoreClick} style={{backgroundColor:'#363062', color:'white', padding:'0.8rem 1rem', cursor:'pointer', border:'none', fontWeight:'bold', borderRadius:'10px'}}>
+                    SHOW MORE
+                </button>
+            )}
             
         </div>
       </div>

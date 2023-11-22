@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import './Search.css'
 import {useNavigate} from 'react-router-dom'
+import ListingItem from '../Components/ListingItem';
+
 
 const Search = () => {
 
@@ -156,6 +158,24 @@ const Search = () => {
       </div>
       <div className="rightSearch">
         <h1>Listing Results:</h1>
+        <div className="" style={{display:'flex', padding: '2rem', flexWrap:'wrap', justifyContent:'center', gap:'1rem'}}>
+
+            {!loading && listing.length===0 && (
+                <p style={{fontSize:'1.3rem', fontWeight:'bold', color:'black', textAlign:'center'}}>NO LISTING FOUND !!!</p>
+            )
+            }
+
+            {loading && (
+                <p style={{fontSize:'1.3rem', fontWeight:'bold', color:'black', textAlign:'center'}}>LOADING...</p>
+            )}
+
+            {!loading && listing && listing.map((listing) =>(
+                <ListingItem key={listing._id}  listing={listing}/>
+            ))
+            }
+
+            
+        </div>
       </div>
     </div>
   )

@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap');
 
+
+
 .searchPage{
     display: flex;
     flex-direction: row;
+    overflow-x: hidden;
 }
 
 .leftSearch{
@@ -11,7 +14,7 @@
     flex-direction: column;
     border-right: 2px solid black;
     padding: 2rem 0.7rem;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: 'Exo 2', sans-serif;
     font-size: 1.2rem;    
 }
@@ -100,6 +103,8 @@
 
 .searchPage>.rightSearch{
     padding: 1rem;
+    width: 70%;
+    font-family: 'Exo 2', sans-serif;
 }
 
 
@@ -123,5 +128,13 @@
         border-radius: 5px;
     }
 
+    .searchPage>.rightSearch {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .searchPage>.rightSearch>h1 {
+        font-size: 1.4rem;
+    }
 
 }

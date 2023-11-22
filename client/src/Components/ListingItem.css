@@ -1,0 +1,88 @@
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-direction: column;
+    padding: 0rem 0rem 0.5rem 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.03);
+}
+
+.card > img{
+    width: 24rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: 0.3s ease-in-out;
+}
+
+.card > img:hover{
+    transform: scale(1.03);
+}
+
+.card>.details{
+    padding: 0.5rem;
+    width: fit-content;
+    /* Set a fixed width or adjust as needed */
+    width: 23rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
+}
+
+.card > .details > h2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+    white-space: nowrap;
+}
+
+.card>.details>.address{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.card>.details>.address>p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+    white-space: nowrap;
+}
+
+.card>.details>.description {
+    display: flex;
+    align-items: center;
+    /* white-space: wrap; */
+    overflow: hidden;
+    /* text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; */
+}
+
+
+.card>.details>.description>p {
+    text-overflow: ellipsis;
+    color: black;
+    white-space: wrap;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+

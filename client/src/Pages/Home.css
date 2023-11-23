@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap');
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10rem 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: white;
+}
+
+main>.heading{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+}
+
+main>.heading>a>button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #A6FF96;
+    color: black;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main>.heading>p {
+    margin: 4rem;
+    font-size: 5rem;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-align: center;
+}
+
+main>.offerRentSale{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+main>.offerRentSale>.offer{
+    width: 100%;
+    gap: 2rem;
+}
+
+main>.offerRentSale>.offer>h2{
+    color: #A6FF96;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Merriweather Sans', sans-serif;
+
+}
+
+main>.offerRentSale>.offer>.listingArea{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+main>.offerRentSale>.offer>a{
+    background-color: #A6FF96;
+    color: black;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Merriweather Sans', sans-serif;
+
+}

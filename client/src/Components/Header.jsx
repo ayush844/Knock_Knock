@@ -50,13 +50,13 @@ const Header = () => {
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='Search...' value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
                 <button>
-                    <SearchIcon className='icon'/>
+                    <SearchIcon className='icon' style={{color:'gray'}}/>
                 </button>
             </form>
 
             <ul>
 
-                <Link to='/home' style={{ textDecoration: 'none' }}>
+                <Link to='/' style={{ textDecoration: 'none' }}>
                     <li className='hide-when-small'>HOME</li>
                 </Link>
                 

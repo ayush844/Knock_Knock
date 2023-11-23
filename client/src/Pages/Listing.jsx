@@ -14,6 +14,8 @@ import DeckIcon from '@mui/icons-material/Deck';
 import { useSelector } from 'react-redux';
 import Contact from '../Components/Contact';
 
+
+
 const Listing = () => {
 
     SwiperCore.use([Navigation]);
@@ -60,7 +62,7 @@ const Listing = () => {
 
     {listing && !loading && !error && (
         <>
-            <Swiper navigation>
+            <Swiper navigation style={{width:'100%'}}>
 
                 {listing.imageUrls.map((url)=>(
                     <SwiperSlide key={url}>

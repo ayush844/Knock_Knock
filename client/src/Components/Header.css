@@ -4,7 +4,8 @@
 
 
 header {
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 
 header > .header-content{
@@ -32,11 +33,11 @@ header > .header-content > a > h1{
 
 
 header > .header-content > a > h1 > :nth-child(odd) {
-    color: rgba(0, 159, 184, 255);
+    color: #A6FF96;
 }
 
 header > .header-content > a > h1 > :nth-child(even) {
-    color: black;
+    color: white;
 }
 
 /* rgba(160, 159, 158, 255) */
@@ -45,7 +46,8 @@ header>.header-content>form{
     display: flex;
     align-items: center;
     justify-content:space-between;
-    background-color: rgba(245, 245, 242, 255);
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 4px solid #A6FF96;
     padding: 1rem;
     width: 100%;
     max-width: 300px;
@@ -55,7 +57,7 @@ header>.header-content>form{
 
 header > .header-content > form > input{  
     font-size: 1.25rem;
-    color: black;
+    color: white;
     background-color: transparent;
     border: none;
     box-sizing: border-box;
@@ -98,11 +100,11 @@ header>.header-content>ul>a>li{
     cursor: pointer;
     transition: 400ms ease;
     font-weight: bolder;
-    color: black;
+    color: white;
 }
 
 header>.header-content>ul>a>li:hover{
-    color: rgba(0, 159, 184, 255);
+    color: #A6FF96;
     text-decoration: underline;
 }
 
@@ -120,7 +122,7 @@ header>.header-content>ul>a>li:hover{
 @media (max-width: 1000px) {
 
     header>.header-content>form {
-        padding: 0.3rem ;
+        padding: 0.9rem ;
         max-width: 200px;
     }
 

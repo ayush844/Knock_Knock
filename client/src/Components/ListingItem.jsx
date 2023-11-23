@@ -10,7 +10,7 @@ import BathtubIcon from '@mui/icons-material/Bathtub';
 const ListingItem = ({listing}) => {
   return (
     <Link to={`/listing/${listing._id}`} style={{textDecoration:'none'}}>
-        <div className='card'>
+        <div className='card' style={{backgroundColor:'#F5F7F8'}}>
             <img src={listing.imageUrls[0]} alt="listing_pic" />
             <div className="details">
                 <h2 id='name'>{listing.name}</h2>

@@ -129,7 +129,7 @@ const Search = () => {
       <div className="leftSearch">
         <form onSubmit={handleSubmit}>
             <div className="search-term">
-                <label>Search Term:</label>
+                <label style={{color:'white'}}>Search Term:</label>
                 <input type="text" id='searchTerm' placeholder='search...' value={sideBarData.searchTerm} onChange={handleChange} />
             </div>
             <div className='type'>
@@ -179,16 +179,16 @@ const Search = () => {
         </form>
       </div>
       <div className="rightSearch">
-        <h1>Listing Results:</h1>
+        <h1 style={{color:'#A6FF96'}}>Listing Results:</h1>
         <div className="" style={{display:'flex', padding: '2rem', flexWrap:'wrap', justifyContent:'center', gap:'1rem'}}>
 
             {!loading && listing.length===0 && (
-                <p style={{fontSize:'1.3rem', fontWeight:'bold', color:'black', textAlign:'center'}}>NO LISTING FOUND !!!</p>
+                <p style={{fontSize:'1.3rem', fontWeight:'bold', color:'red', textAlign:'center'}}>NO LISTING FOUND !!!</p>
             )
             }
 
             {loading && (
-                <p style={{fontSize:'1.3rem', fontWeight:'bold', color:'black', textAlign:'center'}}>LOADING...</p>
+                <p style={{fontSize:'1.3rem', fontWeight:'bold', color:'#A6FF96', textAlign:'center'}}>LOADING...</p>
             )}
 
             {!loading && listing && listing.map((listing) =>(
@@ -197,7 +197,7 @@ const Search = () => {
             }
 
             {showMore && (
-                <button onClick={onShowMoreClick} style={{backgroundColor:'#363062', color:'white', padding:'0.8rem 1rem', cursor:'pointer', border:'none', fontWeight:'bold', borderRadius:'10px'}}>
+                <button onClick={onShowMoreClick} style={{backgroundColor:'#A6FF96', color:'black', padding:'0.8rem 1rem', cursor:'pointer', border:'none', fontWeight:'bolder', borderRadius:'10px'}}>
                     SHOW MORE
                 </button>
             )}

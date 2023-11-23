@@ -84,3 +84,53 @@ main>.offerRentSale>.offer>a{
     font-family: 'Merriweather Sans', sans-serif;
 
 }
+
+
+@media (max-width: 1000px) {
+
+    main {
+        padding: 20rem 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        color: white;
+    }
+
+    main>.heading {
+        gap: 1rem;
+    }
+
+    main>.heading>a>button {
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+    }
+
+    main>.heading>p {
+        margin: 1rem;
+        font-size: 2rem;
+    }
+
+    main>.offerRentSale {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    main>.offerRentSale>.offer {
+        gap: 1rem;
+    }
+
+    main>.offerRentSale>.offer>h2 {
+        font-size: 1.7rem;
+    }
+
+    main>.offerRentSale>.offer>.listingArea {
+        gap: 1rem;
+    }
+
+
+    main>.offerRentSale>.offer>a {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+}

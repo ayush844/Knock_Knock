@@ -9,6 +9,7 @@ h1{
     font-family: 'Exo 2', sans-serif;
     margin: 2rem 0;
     font-weight: bold;
+    color: #A6FF96;
 }
 
 form.userForm{
@@ -24,7 +25,7 @@ form.userForm > img.userInfoImg{
     width: 9rem;
     height: 9rem;
     object-fit: cover;
-    border: 5px solid black;
+    border: 5px solid #A6FF96;
     padding: 0.25rem;
     cursor: pointer;
     transition: 0.25s ease-in-out;
@@ -35,8 +36,9 @@ form.userForm>img.userInfoImg:hover {
 }
 
 form.userForm > input.userInfo{
-    border: 2px solid black;
-    color: black;
+    border: 2px solid #A6FF96;
+    color: white;
+    background-color: transparent;
     padding: 1rem;
     font-size: 1.5rem;
     border-radius: 10px;
@@ -106,7 +108,7 @@ div.options > span.delete{
 }
 
 div.options>span.signOut {
-    color: #0802A3;
+    color: red;
     font-size: 1.25rem;
 }
 

@@ -6,7 +6,7 @@
     flex-direction: column;
     padding: 0rem 0rem 0.5rem 0;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid #A6FF96;
     overflow: hidden;
     transition: 0.2s ease-in-out;
 }
@@ -42,7 +42,7 @@
 .card > .details > h2{
     overflow: hidden;
     text-overflow: ellipsis;
-    color: black;
+    color: white;
     white-space: nowrap;
 }
 
@@ -59,7 +59,7 @@
 .card>.details>.address>p {
     overflow: hidden;
     text-overflow: ellipsis;
-    color: black;
+    color: white;
     white-space: nowrap;
 }
 
@@ -77,7 +77,7 @@
 
 .card>.details>.description>p {
     text-overflow: ellipsis;
-    color: black;
+    color: white;
     white-space: wrap;
     font-size: 0.8rem;
     display: -webkit-box;

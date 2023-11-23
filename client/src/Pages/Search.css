@@ -6,13 +6,14 @@
     display: flex;
     flex-direction: row;
     overflow-x: hidden;
+    background-color: black;
 }
 
 .leftSearch{
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-right: 2px solid black;
+    border-right: 2px solid #A6FF96;
     padding: 2rem 0.7rem;
     /* height: 100vh; */
     font-family: 'Exo 2', sans-serif;
@@ -32,14 +33,16 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    color: white;
 }
 
 .searchPage>.leftSearch>form>.search-term>input{
     padding: 3px 5px;
     font-size: 1.2rem;
     border-radius: 5px;
-    border: 1px solid rgba(0, 159, 184, 255);
-
+    border: 1px solid #A6FF96;
+    background-color: transparent;
+    color: white;
 }
 
 .searchPage>.leftSearch>form>.type{
@@ -48,6 +51,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    color: white;
 }
 
 .searchPage>.leftSearch>form>.type>.typeOptions{
@@ -56,6 +60,7 @@
     justify-content: center;
     align-items: center;
     gap: 3px;
+    color: #A6FF96;
 }
 
 .searchPage>.leftSearch>form>.type>.typeOptions>input[type="radio"] {
@@ -73,12 +78,13 @@
     gap: 1rem;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .searchPage>.leftSearch>form>.sortDiv>select{
     padding: 0.3rem 0.5rem;
     font-size: 1.2rem;
-    border: 3px solid rgba(0, 159, 184, 255)
+    border: 3px solid #A6FF96;
 }
 
 .searchBtn{
@@ -103,6 +109,7 @@
     padding: 1rem;
     width: 70%;
     font-family: 'Exo 2', sans-serif;
+    background-color: rgba(0, 0, 0, 0.93);
 }
 
 

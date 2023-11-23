@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    background-color: black;
 }
 
 .signup-container>h1 {
@@ -16,6 +17,7 @@
     font-weight: 900;
     font-family: 'Inter Tight', sans-serif;
     letter-spacing: 2px;
+    color: #A6FF96;
 }
 
 
@@ -27,17 +29,19 @@
 
 
 .signup-container>form>input {
-    border: 1px solid rgba(0, 159, 184, 255);
+    border: 1px solid #A6FF96;
     font-size: 1.5rem;
     padding: 15px;
     margin: 1rem 0;
+    color: white;
+    background-color: transparent;
 }
 
 
 .signup-container>form>button.manual-sign-up {
-    color: white;
+    color: #A6FF96;
     background-color: #132043;
-    border: 1px solid white;
+    border: 1px solid #A6FF96;
     border-radius: 10px;
     padding: 1rem;
     font-size: 1rem;
@@ -58,6 +62,7 @@
     margin-top: 2rem;
     font-size: 1.45rem;
     font-family: 'Raleway', sans-serif;
+    color: #A6FF96;
 }
 
 

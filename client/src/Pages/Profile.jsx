@@ -171,8 +171,8 @@ const Profile = () => {
 
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-      <h1>PROFILE</h1>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor:'rgba(0, 0, 0, 0.95)'}}>
+      <h1 style={{color:'#A6FF96'}}>PROFILE</h1>
 
       <form className='userForm' onSubmit={handleSubmit}>
         <input onChange={(e)=>setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept='image/*'/>
@@ -213,16 +213,16 @@ const Profile = () => {
           {
             userListings && userListings.length > 0 && 
             <div className="" style={{display: 'flex', flexDirection: 'column', gap: '2'}}>
-              <h1 style={{textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold', margin: '0 5px'}}>YOUR LISTINGS</h1>
+              <h1 style={{textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold', margin: '0 5px', color:'white'}}>YOUR LISTINGS</h1>
               {
               userListings.map((listing) => (
-              <div key={listing._id} className="listingBox" style={{margin: "0.6rem", padding:"4px 9px", backgroundColor: 'transparent', border: '1px solid #45474B', borderRadius: '5px', display: 'flex', flexDirection: "row", justifyContent: 'space-between', alignItems: 'center', width: '100%', maxWidth: '80vw', }}>
+              <div key={listing._id} className="listingBox" style={{margin: "0.6rem", padding:"4px 9px", backgroundColor: 'transparent', border: '1px solid #A6FF96', borderRadius: '5px', display: 'flex', flexDirection: "row", justifyContent: 'space-between', alignItems: 'center', width: '100%', maxWidth: '80vw', }}>
 
                 <Link to={`/listing/${listing._id}`}>
                   <img style={{height: '9rem', width: '11rem', marginRight: '7px'}} src={listing.imageUrls[0]} alt="listing cover" />
                 </Link>
 
-                <Link to={`/listing/${listing._id}`} style={{color: 'black', textDecoration: 'none', fontSize: '1.3rem', textTransform: 'capitalize', fontWeight: 'bold', overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}>
+                <Link to={`/listing/${listing._id}`} style={{color: 'white', textDecoration: 'none', fontSize: '1.3rem', textTransform: 'capitalize', fontWeight: 'bold', overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}>
                   <p>{listing.name}</p>
                 </Link>
 

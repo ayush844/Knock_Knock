@@ -14,11 +14,11 @@ h1{
     font-size: 3rem;
     text-align: center;
     margin: 1rem;
-
+    color: white;
 }
 
 h1>span {
-    color: rgba(0, 159, 184, 255);
+    color: #A6FF96;
 }
 
 main > form{
@@ -41,14 +41,18 @@ main>form>div.input-area>input{
     padding: 2rem;
     font-size: 1.75rem;
     margin: 1rem;
-    border: 2px solid rgba(0, 159, 184, 255);
+    border: 2px solid #A6FF96;
+    background-color: transparent;
+    color: white;
 }
 
 main>form>div.input-area>textarea {
     padding: 2rem;
     margin: 1rem;
     font-size: 1.75rem;
-    border: 2px solid rgba(0, 159, 184, 255);
+    border: 2px solid #A6FF96;
+    background-color: transparent;
+    color: white;
 }
 
 main>form>div.input-area>div.checkbox_area{
@@ -92,8 +96,10 @@ main>form>div.input-area>div.details>div.details_item>input[type="number"] {
     font-size: 2rem;
     width: 90px;
     height: 50px;
-    border: 2px solid #A9A9A9;
+    border: 2px solid #A6FF96;
     border-radius: 10px;
+    background-color: transparent;
+    color: #A6FF96;
 }
 
 main>form>div.input-area>div.details>div.price>input[type="number"] {
@@ -145,16 +151,17 @@ main>form>div.image-area>div.imageBox{
 
 main>form>div.image-area>div.imageBox>input{
     padding: 1.5rem 3rem;
-    border: 1px solid #A9A9A9;
+    border: 1px solid #A6FF96;
     font-size: 1rem;
     font-family: 'Comfortaa', sans-serif;
+    color: #A6FF96;
 }
 
 main>form>div.image-area>div.imageBox>button{
     background-color: transparent;
-    color: #186F65;
+    color: #A6FF96;
     font-weight: bold;
-    border: 3px solid #186F65;
+    border: 3px solid #A6FF96;
     border-radius: 10px;
     padding: 1.5rem 1rem;
     margin: 0.5rem;
@@ -164,10 +171,10 @@ main>form>div.image-area>div.imageBox>button{
 }
 
 main>form>div.image-area>div.imageBox>button:hover {
-    background-color: #186F65;
-    color: white;
+    background-color: #A6FF96;
+    color: black;
     font-weight: bold;
-    border: 3px solid white;
+    border: 3px solid black;
 }
 
 main>form>div.image-area>button{
@@ -175,10 +182,12 @@ main>form>div.image-area>button{
     width: 75%;
     margin-top: 3rem;
     font-size: 1.75rem;
-    background-color: #00204A;
-    color: white;
+    background-color: #A6FF96;
+    color: black;
     font-weight: bold;
     cursor: pointer;
+    border: none;
+    border-radius: 10px;
 }
 
 main>form>div.image-area>button:hover{
@@ -213,7 +222,7 @@ main>form>div.image-area>button:disabled {
         padding: 1rem;
         font-size: 1.25rem;
         margin: 0.69rem;
-        border: 1px solid rgba(0, 159, 184, 255);
+        border: 1px solid #A6FF96;
     }
     
     main>form>div.input-area>textarea {
@@ -221,7 +230,7 @@ main>form>div.image-area>button:disabled {
         padding: 1rem;
         margin: 0.69rem;
         font-size: 1.25rem;
-        border: 1px solid rgba(0, 159, 184, 255);
+        border: 1px solid #A6FF96;
     }
 
     main>form>div.input-area>div.checkbox_area {
@@ -254,7 +263,7 @@ main>form>div.image-area>button:disabled {
         font-size: 1.15rem;
         width: 60px;
         height: 40px;
-        border: 1px solid #A9A9A9;
+        border: 1px solid #A6FF96;
     }
 
     main>form>div.input-area>div.details>div.price>input[type="number"] {
@@ -297,7 +306,7 @@ main>form>div.image-area>button:disabled {
     }
         
     main>form>div.image-area>div.imageBox>button {
-        border: 1px solid #186F65;
+        border: 1px solid #A6FF96;
         padding: 0.5rem 0.5rem;
         margin: 0.35rem;
     }

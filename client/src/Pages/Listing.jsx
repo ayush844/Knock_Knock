@@ -56,7 +56,7 @@ const Listing = () => {
 
   return (
     <main style={{padding: '0'}}>
-      {loading && <p style={{textAlign:'center', marginTop:'3rem', fontSize:'2rem', color:'rgba(0, 159, 184, 255)'}}>LOADING...</p>}
+      {loading && <p style={{textAlign:'center', marginTop:'3rem', fontSize:'2rem', color:'#A6FF96'}}>LOADING...</p>}
 
       {error && <p style={{textAlign:'center', marginTop:'3rem', fontSize:'2rem', color:'red'}}>SOMETHING WENT WRONG !</p>}
 
